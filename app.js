@@ -1,6 +1,6 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
+// O principal objetivo deste desafio é fortalecer suas habilidades
+// em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 listaNomesAmigos = [];
-//let amigoSecreto = sortearAmigoAleatorio();
 
 function adicionarAmigo(){
    const nomeAmigo = document.querySelector('input').value;
@@ -9,8 +9,9 @@ function adicionarAmigo(){
        console.log(listaNomesAmigos);
        limparCampo();
        exibirNomesAmigos();
+   }else {
+       alert('Por favor, insira um nome válido.');
    }
-  
 }
 
 function limparCampo() {
@@ -29,24 +30,25 @@ function exibirNomesAmigos() {
 }
 
 function sortearAmigoAleatorio() {
+    let exibeAmigoSorteadoNaTela = document.querySelector('h4');
+
     if (listaNomesAmigos.length === 0) {
         alert('Adicione amigos antes de sortear!');
         return;
     }
     const indiceAleatorio = Math.floor(Math.random() * listaNomesAmigos.length);
     const amigoSorteado = listaNomesAmigos[indiceAleatorio];
-    alert(`O amigo secreto sorteado é: ${amigoSorteado}`);
+    exibeAmigoSorteadoNaTela.innerHTML = (`O Amigo Sorteado foi: ${amigoSorteado}`);
 }
 
 function reiniciarSorteio() {
     listaNomesAmigos = [];
     exibirNomesAmigos();
     limparCampo();
-    document.getElementById('reiniciar').setAttribute('disabled', true);
+    document.querySelector('h4').innerHTML = ''; // Limpa o campo h4
 }
-
 function atualizarBotaoReiniciar() {
-    const botaoReiniciar = document.getElementById('reiniciar');
+    const botaoReiniciar = document.getElementById('reiniciarSorteio');
     if (listaNomesAmigos.length > 0) {
         botaoReiniciar.removeAttribute('disabled');
     } else {
