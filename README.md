@@ -10,3 +10,4 @@ temos o botão reiniciar que irá reinicializar o jogo limpando os dados da tabe
 o programa não permite sortear caso a lista esteja vazia avisando com um alerta que é preciso inserir nomes na lista antes de sortear.
 também é emitido um alerta caso o usuário tente adicionar um amigo com o campo onde deve constar o nome estiver vazio.
 
+Link do APP: https://adrianohmoraes.github.io/Desafio_Challenge/
